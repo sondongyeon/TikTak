@@ -1,0 +1,30 @@
+spring:
+  application:
+    name: reservation
+  datasource:
+    url: jdbc:mysql://0.0.0.0:3306/reservation
+    username: son
+    password: 1234
+    driver-class-name: com.mysql.cj.jdbc.Driver
+  jpa:
+    properties:
+      hibernate:
+        dialect: org.hibernate.dialect.MySQL8Dialect
+        defer-datasource-initialization: true
+    hibernate:
+      ddl-auto: update
+  jwt:
+    issuer: ndn153@naver.com
+    secret_key: itsepguyitsepguyitsepgyitsitsits
+
+  security:
+    oauth2:
+      client:
+        registration:
+          google:
+            client-id: 204961089524-8iifuo2lanp17f58mns052ee5l94d2fh.apps.googleusercontent.com
+            client-secret: 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
+            scope:
+              - email
+              - profile
+
