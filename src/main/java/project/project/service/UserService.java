@@ -5,7 +5,7 @@ import org.springframework.security.core.userdetails.UserDetailsService;
 import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 import org.springframework.stereotype.Service;
 import project.project.domain.Member;
-import project.project.dto.AddUserRequest;
+import project.project.dto.UserDTO;
 import project.project.repository.UserRepository;
 
 @RequiredArgsConstructor
@@ -13,7 +13,7 @@ import project.project.repository.UserRepository;
 public class UserService implements UserDetailsService {
     private final UserRepository userRepository;
 
-    public Long save(AddUserRequest dto) {
+    public Long save(UserDTO dto) {
         BCryptPasswordEncoder encoder = new BCryptPasswordEncoder();
         return userRepository.save(Member.builder()
                 .username(dto.getUsername())

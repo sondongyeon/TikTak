@@ -8,7 +8,7 @@ import org.springframework.security.web.authentication.logout.SecurityContextLog
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
-import project.project.dto.AddUserRequest;
+import project.project.dto.UserDTO;
 import project.project.service.UserService;
 
 @RequiredArgsConstructor
@@ -17,7 +17,7 @@ public class UserApiController {
     private final UserService userService;
 
     @PostMapping("/user")
-    public String signup(AddUserRequest request) {
+    public String signup(UserDTO request) {
         userService.save(request);
         return "redirect:/login";
     }
