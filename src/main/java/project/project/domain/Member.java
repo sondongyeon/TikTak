@@ -83,7 +83,6 @@ public class Member implements UserDetails {
 
     public Member update(String username) {
         this.username = username;
-
         return this;
     }
 }

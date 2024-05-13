@@ -14,7 +14,7 @@ public class VideoViewResponse {
     private LocalDateTime uploadDate;
 
     public VideoViewResponse(Video video) {
-        this.id = video.getVideoId();
+        this.id = (long) video.getVideoId();
         this.title = video.getTitle();
         this.length = video.getLength();
         this.uploadDate = video.getUploadDate();
