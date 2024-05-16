@@ -19,6 +19,8 @@
 
 ## ERD
 
+<img src="https://github.com/sondongyeon/TikTak/assets/121774504/092d559e-5dd9-4869-8dd5-82456d4d96ec" width='600' height='400'/>
+
 
 ## 프로젝트 구조
 
@@ -121,6 +123,6 @@
 
 ## 트러블 슈팅
 
-- OAuth2 
+- JWT인증 문
 
 
