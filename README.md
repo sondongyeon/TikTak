@@ -6,3 +6,14 @@
 - 소셜 로그인을 통한 간편한 로그인 및 회원 가입을 진행합니다.
 
 ## 팀원 
+<img src="https://github.com/sondongyeon/TikTak/assets/121774504/0441f2b2-1cf9-4127-a3f3-0a5fd4184db8" width='100' height='100'/>
+
+- 손동연 / BE 및 프로젝트 기획, 설계
+
+## 개발환경
+- Back-end : Spring Boot
+- DB : Mysql
+- 버전업 & 이슈관리 : github, notion
+- 서비스 배포 환경 : docker
+- 
+  
