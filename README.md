@@ -18,3 +18,93 @@
 - 
   
 ## 프로젝트 구조
+
+<br>
+
+```plain text
+📦src
+ ┣ 📂main
+ ┃ ┣ 📂generated
+ ┃ ┣ 📂java
+ ┃ ┃ ┗ 📂project
+ ┃ ┃ ┃ ┗ 📂project
+ ┃ ┃ ┃ ┃ ┣ 📂config
+ ┃ ┃ ┃ ┃ ┃ ┣ 📂jwt
+ ┃ ┃ ┃ ┃ ┃ ┃ ┣ 📜JwtProperties.java
+ ┃ ┃ ┃ ┃ ┃ ┃ ┗ 📜TokenProvider.java
+ ┃ ┃ ┃ ┃ ┃ ┣ 📂oauth
+ ┃ ┃ ┃ ┃ ┃ ┃ ┣ 📜OAuth2AuthorizationRequestBasedOnCookieRepository.java
+ ┃ ┃ ┃ ┃ ┃ ┃ ┣ 📜OAuth2SuccessHandler.java
+ ┃ ┃ ┃ ┃ ┃ ┃ ┗ 📜OAuth2UserCustomService.java
+ ┃ ┃ ┃ ┃ ┃ ┣ 📜SchedulerConfig.java
+ ┃ ┃ ┃ ┃ ┃ ┣ 📜TokenAuthenticationFilter.java
+ ┃ ┃ ┃ ┃ ┃ ┗ 📜WebOAuthSecurityConfig.java
+ ┃ ┃ ┃ ┃ ┣ 📂controller
+ ┃ ┃ ┃ ┃ ┃ ┣ 📜StatisticController.java
+ ┃ ┃ ┃ ┃ ┃ ┣ 📜TokenApiController.java
+ ┃ ┃ ┃ ┃ ┃ ┣ 📜UserApiController.java
+ ┃ ┃ ┃ ┃ ┃ ┣ 📜UserViewController.java
+ ┃ ┃ ┃ ┃ ┃ ┣ 📜VideoApiController.java
+ ┃ ┃ ┃ ┃ ┃ ┗ 📜VideoViewController.java
+ ┃ ┃ ┃ ┃ ┣ 📂domain
+ ┃ ┃ ┃ ┃ ┃ ┣ 📜Advertisement.java
+ ┃ ┃ ┃ ┃ ┃ ┣ 📜Member.java
+ ┃ ┃ ┃ ┃ ┃ ┣ 📜PlayHistory.java
+ ┃ ┃ ┃ ┃ ┃ ┣ 📜RefreshToken.java
+ ┃ ┃ ┃ ┃ ┃ ┣ 📜Statistics.java
+ ┃ ┃ ┃ ┃ ┃ ┣ 📜Video.java
+ ┃ ┃ ┃ ┃ ┃ ┗ 📜VideoAdvertisement.java
+ ┃ ┃ ┃ ┃ ┣ 📂dto
+ ┃ ┃ ┃ ┃ ┃ ┣ 📜CreateAccessTokenRequest.java
+ ┃ ┃ ┃ ┃ ┃ ┣ 📜CreateAccessTokenResponse.java
+ ┃ ┃ ┃ ┃ ┃ ┣ 📜PlayHistoryDTO.java
+ ┃ ┃ ┃ ┃ ┃ ┣ 📜StatsDTO.java
+ ┃ ┃ ┃ ┃ ┃ ┣ 📜TopFiveVideoDTO.java
+ ┃ ┃ ┃ ┃ ┃ ┣ 📜TopFiveVideoInterface.java
+ ┃ ┃ ┃ ┃ ┃ ┣ 📜UserDTO.java
+ ┃ ┃ ┃ ┃ ┃ ┣ 📜VideoDTO.java
+ ┃ ┃ ┃ ┃ ┃ ┣ 📜VideoListViewResponse.java
+ ┃ ┃ ┃ ┃ ┃ ┣ 📜VideoResponse.java
+ ┃ ┃ ┃ ┃ ┃ ┗ 📜VideoViewResponse.java
+ ┃ ┃ ┃ ┃ ┣ 📂repository
+ ┃ ┃ ┃ ┃ ┃ ┣ 📜AdvertisementRepository.java
+ ┃ ┃ ┃ ┃ ┃ ┣ 📜PlayHistoryRepository.java
+ ┃ ┃ ┃ ┃ ┃ ┣ 📜RefreshTokenRepository.java
+ ┃ ┃ ┃ ┃ ┃ ┣ 📜StatisticsRepository.java
+ ┃ ┃ ┃ ┃ ┃ ┣ 📜UserRepository.java
+ ┃ ┃ ┃ ┃ ┃ ┣ 📜VideoAdvertisementRepository.java
+ ┃ ┃ ┃ ┃ ┃ ┗ 📜VideoRepository.java
+ ┃ ┃ ┃ ┃ ┣ 📂service
+ ┃ ┃ ┃ ┃ ┃ ┣ 📜PlayHistoryService.java
+ ┃ ┃ ┃ ┃ ┃ ┣ 📜RefreshTokenService.java
+ ┃ ┃ ┃ ┃ ┃ ┣ 📜StatisticsService.java
+ ┃ ┃ ┃ ┃ ┃ ┣ 📜TokenService.java
+ ┃ ┃ ┃ ┃ ┃ ┣ 📜UserService.java
+ ┃ ┃ ┃ ┃ ┃ ┣ 📜VideoAdvertisementService.java
+ ┃ ┃ ┃ ┃ ┃ ┗ 📜VideoService.java
+ ┃ ┃ ┃ ┃ ┣ 📂util
+ ┃ ┃ ┃ ┃ ┃ ┣ 📜CookieUtil.java
+ ┃ ┃ ┃ ┃ ┃ ┗ 📜RandomNumberGenerator.java
+ ┃ ┃ ┃ ┃ ┗ 📜ProjectApplication.java
+ ┃ ┗ 📂resources
+ ┃ ┃ ┣ 📂static
+ ┃ ┃ ┃ ┗ 📜article.js
+ ┃ ┃ ┣ 📂templates
+ ┃ ┃ ┃ ┣ 📜login.html
+ ┃ ┃ ┃ ┣ 📜signup.html
+ ┃ ┃ ┃ ┗ 📜videoList.html
+ ┃ ┃ ┗ 📜application.yml
+ ┗ 📂test
+ ┃ ┗ 📂java
+ ┃ ┃ ┗ 📂project
+ ┃ ┃ ┃ ┗ 📂project
+ ┃ ┃ ┃ ┃ ┣ 📂controller
+ ┃ ┃ ┃ ┃ ┃ ┗ 📜TokenApiController.java
+ ┃ ┃ ┃ ┃ ┣ 📂jwt
+ ┃ ┃ ┃ ┃ ┃ ┣ 📜JwtFactory.java
+ ┃ ┃ ┃ ┃ ┃ ┗ 📜TokenTest.java
+ ┃ ┃ ┃ ┃ ┗ 📜ProjectApplicationTests.java
+
+```
+
+</br>
