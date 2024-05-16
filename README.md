@@ -13,8 +13,12 @@
 ## 개발환경
 - Back-end : Spring Boot
 - DB : Mysql
+- ORM : JPA
 - 버전업 & 이슈관리 : github, notion
 - 서비스 배포 환경 : docker
+
+## ERD
+
 
 ## 프로젝트 구조
 
@@ -110,8 +114,9 @@
 
 ## 개발기간 및 작업 관리
 
-- 개발 기간 : 24.04.16 ~ 24.05.08
-- 작업 관리 : git, notion을 통한 관리 / https://erratic-noodle-609.notion.site/e0eabd28ca30417f81d80de3cd0bdf8d?pvs=4
+- 개발 기간 : 24.04.17 ~ 24.05.08
+- 작업 관리 : git, notion을 통한 관리
+- https://erratic-noodle-609.notion.site/e0eabd28ca30417f81d80de3cd0bdf8d?pvs=4
 - 방식 : 매일 아침 프로젝트 정리를 통해 프로젝트 진행상황 확인 및 정리
 
 ## 트러블 슈팅
