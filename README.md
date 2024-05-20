@@ -107,52 +107,7 @@
  ┃ ┃ ┃ ┃ ┗ 📜ProjectApplication.java
  ┃ ┗ 📂resources
  ┃ ┃ ┣ 📂static
- ┃ ┃ ┃ ┗ 📜article.js
- ┃ ┃ ┣ 📂templates
- ┃ ┃ ┃ ┣ 📜login.html
- ┃ ┃ ┃ ┣ 📜signup.html
- ┃ ┃ ┃ ┗ 📜videoList.html
- ┃ ┃ ┗ 📜application.yml
- ┗ 📂test
- ┃ ┗ 📂java
- ┃ ┃ ┗ 📂project
- ┃ ┃ ┃ ┗ 📂project
- ┃ ┃ ┃ ┃ ┣ 📂controller
- ┃ ┃ ┃ ┃ ┃ ┗ 📜TokenApiController.java
- ┃ ┃ ┃ ┃ ┣ 📂jwt
- ┃ ┃ ┃ ┃ ┃ ┣ 📜JwtFactory.java
- ┃ ┃ ┃ ┃ ┃ ┗ 📜TokenTest.java
- ┃ ┃ ┃ ┃ ┗ 📜ProjectApplicationTests.java
-
-```
-
-</details>
-
-</br>
-
-</div>
-
-## 개발 기간
-
-- 개발 기간 : 24.04.17 ~ 24.05.08
-
-## 개발 일정
-- 1주차 : ERD 설계, docker compose를 활용한 개발 환경 구축, 소셜 로그인 기능 구현
-- 2주차 : 소셜 로그인 기능 구현, JWT 토큰을 활용한 로그인 기능 구현
-- 3주차 : 광고 시청 조회수 정산 기능 구현
-- 4주차 : 프로젝트 정리 및 배치 구현 준비
-  
-## 작업 관리
-- 작업 관리 : git, notion을 통한 관리
-- https://erratic-noodle-609.notion.site/e0eabd28ca30417f81d80de3cd0bdf8d?pvs=4
-- 방식 : 매일 아침 프로젝트 정리를 통해 프로젝트 진행상황 확인 및 정리
-
-## 트러블 슈팅(작성중)
-
-### 동영상 조회수 초기화 문제
-
-- 문제점 : 정산시에 조회수가 0으로 초기화 되는 문제 발생
-- 원인 : 
+ ┃인
 - 해결 방안 : 
 
 ### 광고 영상 시청시 정상적으로 조회수 증가가 되지 않는 문제
