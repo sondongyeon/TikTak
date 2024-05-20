@@ -136,12 +136,14 @@
 
 ### 00:00 프로젝트 업데이트시 조회수가 0으로 업데이트 되는 문제
 - 문제점 : Spring Schedule을 이용해 00:00에 프로젝트 업데이트 진행시 회원별 조회수가 0으로 모두 출력되는 현상 발생
-- 원인 : 
-- 해결 방안 :
+- 원인 : docker-compose 사용시, docker container의 휘발성 때문에 이런 문제가 생길 수 있는 현상임을 확인
+- 참고 url : https://simgee.tistory.com/44
+- 참고 자료 : https://docs.docker.com/storage/volumes/#use-a-volume-with-docker-compose 
+- 해결 방안 : docker 설정 파일에 volumes를 설정해 줌으로써 container가 삭제되더라도, 데이터를 영속화 할 수 있게 만들었음.
 
 ### 광고 영상 시청시 정상적으로 조회수 증가가 되지 않는 문제
 
-- 문제점 :
+- 문제점 : 
 - 원인 :
 - 해결 방안 :
 
