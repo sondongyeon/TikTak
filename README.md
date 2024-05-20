@@ -37,7 +37,9 @@
 <details>
  
  <summary>프로젝트 구조 </summary>
+ 
  <div markdown = '2'>
+  
  <br>
 
 ```plain text
@@ -107,8 +109,35 @@
  ┃ ┃ ┃ ┃ ┗ 📜ProjectApplication.java
  ┃ ┗ 📂resources
  ┃ ┃ ┣ 📂static
- ┃인
-- 해결 방안 : 
+ ┃ ┃ ┃ ┗ 📜article.js
+ ┃ ┃ ┣ 📂templates
+ ┃ ┃ ┃ ┣ 📜login.html
+ ┃ ┃ ┃ ┣ 📜signup.html
+ ┃ ┃ ┃ ┗ 📜videoList.html
+ ┃ ┃ ┗ 📜application.yml
+ ┗ 📂test
+ ┃ ┗ 📂java
+ ┃ ┃ ┗ 📂project
+ ┃ ┃ ┃ ┗ 📂project
+ ┃ ┃ ┃ ┃ ┣ 📂controller
+ ┃ ┃ ┃ ┃ ┃ ┗ 📜TokenApiController.java
+ ┃ ┃ ┃ ┃ ┣ 📂jwt
+ ┃ ┃ ┃ ┃ ┃ ┣ 📜JwtFactory.java
+ ┃ ┃ ┃ ┃ ┃ ┗ 📜TokenTest.java
+ ┃ ┃ ┃ ┃ ┗ 📜ProjectApplicationTests.java
+```
+</br>
+
+</div>
+
+</details>
+
+## 트러블 슈팅
+
+### 00:00 프로젝트 업데이트시 조회수가 0으로 업데이트 되는 문제
+- 문제점 :
+- 원인 :
+- 해결 방안 :
 
 ### 광고 영상 시청시 정상적으로 조회수 증가가 되지 않는 문제
 
