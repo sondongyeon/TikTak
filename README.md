@@ -141,11 +141,52 @@
 - 참고 자료 : https://docs.docker.com/storage/volumes/#use-a-volume-with-docker-compose 
 - 해결 방안 : docker 설정 파일에 volumes를 설정해 줌으로써 container가 삭제되더라도, 데이터를 영속화 할 수 있게 만들었음.
 
-### 광고 영상 시청시 정상적으로 조회수 증가가 되지 않는 문제
+```compose.yaml
+    volumes:
+      - ./db/conf.d:/etc/mysql/conf.d
+      - ./db/initdb.d:/docker-entry-point-initdb.d
+```
 
-- 문제점 : 
-- 원인 :
-- 해결 방안 :
+### 일반 영상 조회수와 광고 영상 조회수가 분할되어 증가하지 않는 현상
+- 문제점 : 일반 영상 시청시와 광고 영상 시청시 조회수가 분할되어 인식되게끔 만들었지만, timeout error발생 
+- 원인 : 각각 영상 시청 시간 업데이트가 교착상태에 빠져 dead lock 현상 발생
+- 참고 URL : https://velog.io/@gsuchoi/DB-Transaction-DeadLock%EA%B5%90%EC%B0%A9%EC%83%81%ED%83%9C
+- 참고 자료 : https://www.postgresql.org/docs/9.4/explicit-locking.html,
+             https://chanhuiseok.github.io/posts/cs-2/,
+             https://myjamong.tistory.com/181,
+             https://sosopro.tistory.com/55
+- 해결 방안 : 일반 영상 길이 부분 @Transactional 어노테이션 삭제 후 서버 재시작을 통해 오류 해결
+
+```java
+    @Transactional
+    public Video update(long id, VideoDTO request) {
+        Video video = videoRepository.findById(id)
+                .orElseThrow(() -> new IllegalArgumentException("not found: " + id));
+        video.update(request.getTitle(), request.getLength());
+        return video;
+    }
+
+    @Transactional
+    public Video checkVideo(long id) {
+        Video video = videoRepository.findById(id)
+                .orElseThrow(() -> new IllegalArgumentException("not found: " + id));
+        video.checkVideo();
+        return video;
+    }
+
+    @Transactional
+    public void addPlayTime(long id, int playTime) {
+        Video video = videoRepository.findById(id)
+                .orElseThrow(() -> new IllegalArgumentException("not found: " + id));
+        video.addPlayTime(playTime);
+    }
+
+    public int getLength(long id) {
+        Video video = videoRepository.findById(id)
+                .orElseThrow(() -> new IllegalArgumentException("not found: " + id));
+        return video.getLength();
+    }
+```
 
 ## 성능 개선
 
