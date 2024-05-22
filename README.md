@@ -6,7 +6,8 @@
 - 소셜 로그인을 통한 간편한 로그인 및 회원 가입을 진행합니다.
 
 ## 팀원(BE 1명)
-<img src="https://github.com/sondongyeon/TikTak/assets/121774504/0441f2b2-1cf9-4127-a3f3-0a5fd4184db8" width='200' height='200'/>
+
+<img src="https://github.com/sondongyeon/TikTak/issues/4#issue-2309771449" width='200' height='200'/>
 
 - 손동연 / BE 및 프로젝트 기획, 설계
 
