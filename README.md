@@ -5,7 +5,7 @@
 - 유저는 짧은 영상을 업로드하고, 각 영상의 조회수에 따라 00:00 정각에 수익 정산을 진행합니다.
 - 소셜 로그인을 통한 간편한 로그인 및 회원 가입을 진행합니다.
 
-## 팀원 
+## 팀원(BE 1명)
 <img src="https://github.com/sondongyeon/TikTak/assets/121774504/0441f2b2-1cf9-4127-a3f3-0a5fd4184db8" width='200' height='200'/>
 
 - 손동연 / BE 및 프로젝트 기획, 설계
@@ -158,29 +158,6 @@
 - 해결 방안 : 일반 영상 길이 부분 @Transactional 어노테이션 삭제 후 서버 재시작을 통해 오류 해결
 
 ```java
-    @Transactional
-    public Video update(long id, VideoDTO request) {
-        Video video = videoRepository.findById(id)
-                .orElseThrow(() -> new IllegalArgumentException("not found: " + id));
-        video.update(request.getTitle(), request.getLength());
-        return video;
-    }
-
-    @Transactional
-    public Video checkVideo(long id) {
-        Video video = videoRepository.findById(id)
-                .orElseThrow(() -> new IllegalArgumentException("not found: " + id));
-        video.checkVideo();
-        return video;
-    }
-
-    @Transactional
-    public void addPlayTime(long id, int playTime) {
-        Video video = videoRepository.findById(id)
-                .orElseThrow(() -> new IllegalArgumentException("not found: " + id));
-        video.addPlayTime(playTime);
-    }
-
     public int getLength(long id) {
         Video video = videoRepository.findById(id)
                 .orElseThrow(() -> new IllegalArgumentException("not found: " + id));
@@ -188,5 +165,9 @@
     }
 ```
 
-## 성능 개선
+## 개선 방향
+
+1. Spring Batch를 이용해 대용량 트래픽 처리가 가능하게 만들기 / 현재 진행중
+2. 코드의 재사용 가능성을 높여 서버 응답 속도 높이기
+  
 
